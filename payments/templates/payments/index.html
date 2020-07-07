@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container ">
+        <div class="container">
+            <h1 class="mb-3 mt-2">Payments:</h1>
+        </div>
+
+            <div class="container">
+                    <a href="{% url 'create_payment' %} ">
+                        <button type="button" class="btn btn-success">Add Payments</button>
+                    </a>
+            </div>
+            <br>
+            <div class="width: 75">
+                <table class="table table-bordered ">
+                      <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Number</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Purpose of payment</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                      </thead>
+                        {% for payment in payments %}
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>{{ payment.number}}</td>
+                                <td>{{payment.date|date}}</td>
+                                <td>{{payment.amount}}</td>
+                                <td>{{payment.purpose_of_payment|title}}</td>
+                                <td>{{payment.status|title}}</td>
+                                <td><a href="{% url 'payment_delete_url' payment.id %}" class="active"><button type="button" class="btn btn-light">Delete</button></a></td>
+                                <td><a href="{% url 'payment_update_url' payment.id %}" class="active"><button type="button" class="btn btn-light">Update</button></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                </table>
+            </div>
+    </div>
+{% endblock %}
