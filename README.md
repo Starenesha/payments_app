@@ -19,4 +19,4 @@ python manage.py migrate</code>
 
 <p>After all these steps , you can start testing and developing this project.</p>
 
-<h4>That's it! Happy Coding!</h4>
+<h4>That's it!)</h4>
