@@ -32,7 +32,7 @@
                                 <td>{{ payment.number}}</td>
                                 <td>{{payment.date|date}}</td>
                                 <td>{{payment.amount}}</td>
-                                <td>{{payment.purpose_of_payment|title}}</td>
+                                <td>{{payment.purpose_of_payment}}</td>
                                 <td>{{payment.status|title}}</td>
                                 <td><a href="{% url 'payment_delete_url' payment.id %}" class="active"><button type="button" class="btn btn-light">Delete</button></a></td>
                                 <td><a href="{% url 'payment_update_url' payment.id %}" class="active"><button type="button" class="btn btn-light">Update</button></a></td>
